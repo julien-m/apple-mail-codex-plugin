@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "apple-mail",
-  "version": "0.1.1",
-  "description": "Lire sa boîte iCloud Mail dans Codex via un service HTTP/MCP indépendant de Mail.app.",
+  "version": "0.1.2",
+  "description": "Lire, rédiger, envoyer et organiser ses emails iCloud Mail dans Codex.",
   "author": {
     "name": "Julien M"
   },
@@ -12,16 +12,18 @@
       "onboardingSkill": "./skills/setup/SKILL.md",
       "interface": {
         "displayName": "Apple Mail",
-        "shortDescription": "Lire et rechercher ses emails iCloud",
-        "longDescription": "Accès à iCloud Mail via mail-api-service. Les identifiants restent dans le Trousseau macOS. Le profil de test autorise la lecture uniquement.",
+        "shortDescription": "Gérer ses emails et dossiers iCloud",
+        "longDescription": "Lecture, brouillons, réponses, envoi, dossiers, classement, indésirables et tags via mail-api-service. Identifiants conservés dans le Trousseau macOS.",
         "developerName": "Julien M",
         "category": "Productivity",
         "capabilities": [
-          "Read"
+          "Read",
+          "Write"
         ],
         "defaultPrompt": [
-          "Utilise Apple Mail pour rechercher mes emails iCloud.",
-          "Montre mes dossiers et l’état de synchronisation iCloud."
+          "Liste mes dossiers iCloud et mes emails récents.",
+          "Prépare un brouillon de réponse à cet email.",
+          "Déplace ces emails vers les indésirables."
         ]
       }
     }

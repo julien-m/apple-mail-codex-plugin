@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Vérifier la connexion du plugin Apple Mail, son service iCloud et son profil de lecture sans envoyer ni déplacer d’email.
+description: Vérifier la connexion du plugin Apple Mail, son service iCloud et ses droits de gestion sans envoyer ni déplacer d’email.
 ---
 
 # Connexion Apple Mail
