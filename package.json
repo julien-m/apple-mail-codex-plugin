@@ -1,0 +1,13 @@
+{
+  "name": "apple-mail-codex-plugin",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test --test-timeout=2000 tests/*.test.mjs",
+    "check": "node --check scripts/launch.mjs"
+  }
+}

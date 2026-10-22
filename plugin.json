@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "apple-mail",
+  "version": "0.1.1",
+  "description": "Lire sa boîte iCloud Mail dans Codex via un service HTTP/MCP indépendant de Mail.app.",
+  "author": {
+    "name": "Julien M"
+  },
+  "mcpServers": "./mcp.json",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "interface": {
+        "displayName": "Apple Mail",
+        "shortDescription": "Lire et rechercher ses emails iCloud",
+        "longDescription": "Accès à iCloud Mail via mail-api-service. Les identifiants restent dans le Trousseau macOS. Le profil de test autorise la lecture uniquement.",
+        "developerName": "Julien M",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "defaultPrompt": [
+          "Utilise Apple Mail pour rechercher mes emails iCloud.",
+          "Montre mes dossiers et l’état de synchronisation iCloud."
+        ]
+      }
+    }
+  }
+}
