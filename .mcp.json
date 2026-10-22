@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mail": {
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/scripts/launch.mjs"
+      ]
+    }
+  }
+}

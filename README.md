@@ -21,7 +21,7 @@ Open a new Codex conversation and select Apple Mail. Reload the application if t
 
 ## Usage and limitations
 
-Ask Apple Mail to prepare a reply, create a folder, move messages, or classify messages as junk. The `mail_…` tools come from the MCP server packaged with the plugin. The backend token determines the actual permissions; the plugin does not elevate privileges.
+Ask Apple Mail to prepare a reply, create a folder, move messages, or classify messages as junk. The `mail_…` tools come from the MCP server packaged with the plugin. The package includes portable `mcp.json` and Codex-compatible `.mcp.json`; both launch the same script through `${PLUGIN_ROOT}`. The backend token determines the actual permissions; the plugin does not elevate privileges.
 
 The management token uses `mail:read`, `mail:write`, `mail:send`, `mail:rules`, and `mail:purge`, restricted to the configured account. Permanent deletion requires a validated plan and an explicit request; moving to trash is a separate action. Sending follows draft → preparation → submission → worker processing; inspect the final delivery state.
 
@@ -29,6 +29,6 @@ A partial synchronization does not mean an empty mailbox. Local Mail.app folders
 
 ## Verification
 
-Run `bun run test` and `bun run check`. These tests verify credential-reference protection and transparent stdin/stdout forwarding without using a personal account. Then verify the installed package against its actual backend with an MCP client. Installation alone does not prove an iCloud connection.
+Run `bun run test` and `bun run check`. These tests verify credential-reference protection and transparent stdin/stdout forwarding without using a personal account. After installation, run `codex mcp get mail --json` and confirm that Codex discovers the enabled server and resolves its launcher inside the installed plugin. Then verify the installed package against its actual backend with an MCP client. A direct launcher test alone does not prove that Codex loaded the plugin tools. Installation alone does not prove an iCloud connection.
 
 Read the [official packaging documentation](https://developers.openai.com/plugins/build/plugins) for the package format and local marketplace.

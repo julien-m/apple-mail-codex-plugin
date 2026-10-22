@@ -1,12 +1,11 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "apple-mail",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Lire, rédiger, envoyer et organiser ses emails iCloud Mail dans Codex.",
   "author": {
     "name": "Julien M"
   },
-  "mcpServers": "./mcp.json",
   "extensions": {
     "com.openai": {
       "onboardingSkill": "./skills/setup/SKILL.md",

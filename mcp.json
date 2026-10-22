@@ -4,8 +4,9 @@
     "mail": {
       "type": "stdio",
       "command": "node",
-      "args": ["./scripts/launch.mjs"],
-      "cwd": "."
+      "args": [
+        "${PLUGIN_ROOT}/scripts/launch.mjs"
+      ]
     }
   }
 }
