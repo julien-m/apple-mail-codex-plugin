@@ -43,12 +43,12 @@ export function launch(configFile) {
   }]));
   for (const [signal, handler] of handlers) process.on(signal, handler);
   const cleanup = () => { clearTimeout(timer); for (const [signal, handler] of handlers) process.removeListener(signal, handler); };
-  child.once('error', () => { cleanup(); process.stderr.write('Apple Mail: lancement impossible. Vérifie la configuration locale et le Trousseau.\n'); process.exitCode = 1; });
+  child.once('error', () => { cleanup(); process.stderr.write('Apple Mail: Unable to launch. Check the local configuration and macOS Keychain.\n'); process.exitCode = 1; });
   child.once('exit', (code, signal) => { if(grouped)send('SIGKILL'); cleanup(); process.exitCode = stopping&&!forced ? 0 : code ?? (signal ? 1 : 0); });
   return child;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   try { launch(process.env.APPLE_MAIL_CONFIG ?? join(homedir(), 'Library', 'Application Support', 'apple-mail', 'config.json')); }
-  catch { process.stderr.write('Apple Mail: configure le service et les références du Trousseau avec le guide d’installation.\n'); process.exitCode = 1; }
+  catch { process.stderr.write('Apple Mail: Configure the service and Keychain references using the installation guide.\n'); process.exitCode = 1; }
 }

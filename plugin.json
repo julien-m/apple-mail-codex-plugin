@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "apple-mail",
-  "version": "0.1.3",
-  "description": "Lire, rédiger, envoyer et organiser ses emails iCloud Mail dans Codex.",
+  "version": "0.1.4",
+  "description": "Read, compose, send, and organize iCloud Mail emails in Codex.",
   "author": {
     "name": "Julien M"
   },
@@ -11,8 +11,8 @@
       "onboardingSkill": "./skills/setup/SKILL.md",
       "interface": {
         "displayName": "Apple Mail",
-        "shortDescription": "Gérer ses emails et dossiers iCloud",
-        "longDescription": "Lecture, brouillons, réponses, envoi, dossiers, classement, indésirables et tags via mail-api-service. Identifiants conservés dans le Trousseau macOS.",
+        "shortDescription": "Manage iCloud emails and folders",
+        "longDescription": "Reading, drafts, replies, sending, folders, organization, junk mail, and tags through mail-api-service. Credentials stay in macOS Keychain.",
         "developerName": "Julien M",
         "category": "Productivity",
         "capabilities": [
@@ -20,9 +20,9 @@
           "Write"
         ],
         "defaultPrompt": [
-          "Liste mes dossiers iCloud et mes emails récents.",
-          "Prépare un brouillon de réponse à cet email.",
-          "Déplace ces emails vers les indésirables."
+          "List my iCloud folders and recent emails.",
+          "Prepare a draft reply to this email.",
+          "Move these emails to junk."
         ]
       }
     }

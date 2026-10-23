@@ -1,13 +1,13 @@
 ---
 name: setup
-description: Vérifier la connexion du plugin Apple Mail, son service iCloud et ses droits de gestion sans envoyer ni déplacer d’email.
+description: Check the Apple Mail plugin connection, its iCloud service, and management permissions without sending or moving email.
 ---
 
-# Connexion Apple Mail
+# Apple Mail connection
 
-1. Consulte le catalogue courant et appelle l’outil du plugin dont le suffixe est `mail_accounts_list`.
-2. S’il retourne le compte attendu, vérifie `mail_accounts_capabilities`, `mail_accounts_syncStatus` et `mail_mailboxes_list` avec son ID.
-3. Signale la couverture partielle. Une première page sans message ne prouve pas que la boîte est vide.
-4. Recherche un message avec `mail_messages_search` puis lis-le seulement si cela répond à la demande. N’envoie ni ne classe un email pendant ce contrôle de connexion.
-5. Si le service est indisponible ou si les outils manquent, lis le [guide d’installation](../../README.md) et indique l’étape réellement bloquée. Ne remplace pas le compte par une autre messagerie.
-6. Les secrets sont saisis localement avec `creds` ; aucune valeur dans les messages, logs ou fichiers du plugin. Ne redemande pas une autorisation déjà donnée pour la même opération.
+1. Inspect the current catalog and call the plugin tool whose suffix is `mail_accounts_list`.
+2. If it returns the expected account, check `mail_accounts_capabilities`, `mail_accounts_syncStatus`, and `mail_mailboxes_list` with its ID.
+3. Report partial coverage. An initial page without messages does not prove that the mailbox is empty.
+4. Search for a message with `mail_messages_search`, then read it only if relevant to the request. Do not send or classify email during this connection check.
+5. If the service is unavailable or tools are missing, read the [installation guide](../../README.md) and identify the step actually blocked. Do not substitute another email provider for the account.
+6. Enter secrets locally with `creds`; never include values in messages, logs, or plugin files. Do not request authorization again for the same previously authorized operation.
